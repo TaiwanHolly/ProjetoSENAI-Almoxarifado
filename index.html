@@ -11,117 +11,20 @@
 </head>
 <body>
 
-<header>
-  <h1>SONAX</h1>
-  <p><b>Análise, Adapte, Alcance.</b> <br> Sistema Integrado de Almoxarifados - SENAI</p>
-</header>
 
-<!--principal-->
-<main>
-
-  <!--FORMULÁRIO DE CADASTRO -->
-  <section class="secao-formulario">
-    <h2>Cadastro e Movimentação de Materiais</h2>
-
-    <form id="formMaterial">
-      <div class="grupo-campo">
-        <label for="almoxarifado">Selecione o Almoxarifado:</label>
-        <select id="almoxarifado">
-          <option value="epi">EPIs</option>
-          <option value="uniforme">Uniformes</option>
-          <option value="escolar">Materiais Escolares</option>
-        </select>
-      </div>
-
-      <!--Nome-->
-      <div class="grupo-campo">
-        <label for="nomeMaterial">Nome do Material / Equipamento:</label>
-        <input type="text" id="nomeMaterial" required placeholder="Ex: Óculos de Proteção, Camiseta M, Papel A4">
-      </div>
-
-      <!--Detalhe ou variação-->
-      <div class="grupo-campo">
-        <label for="detalheMaterial">Detalhes / Variação (Cor, Tamanho, Modelo):</label>
-        <input type="text" id="detalheMaterial" placeholder="Ex: Tamanho G, Cor Azul, Eletroeletrônica">
-      </div>
-
-      <!--Quantidade-->
-      <div class="grupo-campo">
-        <label for="quantidadeMaterial">Quantidade:</label>
-        <input type="number" id="quantidadeMaterial" required placeholder="Ex: 10" min="1">
-      </div>
-
-      <!--botão-->
-      <div class="grupo-botoes">
-        <button type="button" id="btnSalvar" onclick="cadastrarMaterial()">Cadastrar Material</button>
-        <button type="button" class="btn-secundario" onclick="limparFormulario()">Limpar Campos</button>
-      </div>
-    </form>
-  </section>
-
-  <!--TABELAS DO ESTOQUE-->
-  <section class="secao-estoque">
-    <h2>Estoque dos Almoxarifados</h2>
-
-    <!--EPIs-->
-    <div class="bloco-tabela">
-      <h3>1. Almoxarifado de EPIs</h3>
-      <table id="tabelaEpi">
-        <thead>
-        <tr>
-          <th>Material / Equipamento</th>
-          <th>Detalhes / Variação</th>
-          <th>Quantidade</th>
-          <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+  <!--Logib-->
+  <header>
+    <div class="logo">
+      <img src="img/Sonax.png" alt="Logo da SONAX">
     </div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
 
-    <!--Uniformes -->
-    <div class="bloco-tabela">
-      <h3>2. Almoxarifado de Uniformes</h3>
-      <table id="tabelaUniforme">
-        <thead>
-        <tr>
-          <th>Material / Equipamento</th>
-          <th>Detalhes / Variação</th>
-          <th>Quantidade</th>
-          <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-    <!--Materiais Escolares -->
-    <div class="bloco-tabela">
-      <h3>3. Almoxarifado de Materiais Escolares</h3>
-      <table id="tabelaEscolar">
-        <thead>
-        <tr>
-          <th>Material / Equipamento</th>
-          <th>Detalhes / Variação</th>
-          <th>Quantidade</th>
-          <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-  Projeto Integrador - Turma 999 V1 | SENAI <b>(PROTÓTIPO SUJEITO À MUDANÇAS)</b>
-  <br>
-  Equipe: Gustavo Dos Santos, Deividy Garcia e Paulo Henrique</p>
-</footer>
-
-<script src="js/javascriptIndex.js"></script>
 </body>
 </html>
