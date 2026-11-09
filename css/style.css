@@ -1,8 +1,7 @@
 /*CORPO DA PÁGINA*/
 body {
   font-family: Arial, sans-serif;
-  background: #415688;
-  background-image: url('../img/BiggerWigglyYellow.gif');
+  background-image: url('../img/BGcoolPatternSlow.gif');
   color: #333333;
 }
 
@@ -38,109 +37,6 @@ main {
   margin: 20px auto;
 }
 
-/*SEÇÕES E CARDS (FORMULÁRIO E ESTOQUES)*/
-.secao-formulario, .secao-estoque {
-  background-color: #ffffff;
-  border: 5px solid #363019;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 40px;
-}
-
-h2 {
-  color: #004085;
-  font-size: 20px;
-  text-align: center;
-  margin-top: 0;
-  border-bottom: 2px solid #004085;
-  padding-bottom: 8px;
-}
-
-/*FORMULÁRIOS E CAMPOS*/
-.grupo-campo {
-  margin-bottom: 15px;
-}
-
-.grupo-campo label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-
-}
-
-.grupo-campo input,
-.grupo-campo select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-/*BOTÕES */
-.grupo-botoes {
-  margin-top: 20px;
-}
-
-button {
-  background-color: #28a745;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-right: 10px;
-  border-radius: 20px;
-}
-
-/*Botão secundário*/
-button.btn-secundario {
-  background-color: #6c757d;
-  border-radius: 20px;
-}
-
-/*Botões da tabela para excluir*/
-button.btn-excluir {
-  background-color: #dc3545;
-  padding: 5px 10px;
-  font-size: 12px;
-  border-radius: 20px;
-}
-
-/*TABELAS Do ESTOQUE */
-.bloco-tabela {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.bloco-tabela h3 {
-  background-color: #e9ecef;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #495057;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-table th, table td {
-  border: 1px solid #dddddd;
-  padding: 10px;
-  text-align: left;
-  font-size: 14px;
-}
-
-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-/*Footer*/
 footer {
 
   color: #ffffff;
