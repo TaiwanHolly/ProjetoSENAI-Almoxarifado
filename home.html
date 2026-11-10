@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SONAX - Página Inicial</title>
+
+    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="icon" type="image/png" href="img/Sonax.png">
+</head>
+
+<body>
+
+    <main class="main-container">
+
+        <!-- CABEÇALHO -->
+        <header class="header">
+
+            <div class="brand">
+                <img src="img/Sonax.png" alt="Logo SONAX">
+                <h1>SONAX</h1>
+            </div>
+
+            <div class="header-info">
+                <span>Controle de Almoxarifado</span>
+                <button class="btn-sair" onclick="sair()">
+                    Sair
+                </button>
+            </div>
+
+        </header>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="content">
+
+            <div class="welcome">
+
+                <h2>Bem-vindo ao SONAX!</h2>
+
+                <p>
+                    Selecione o setor que deseja acessar
+                    para gerenciar os materiais.
+                </p>
+
+            </div>
+
+
+            <!-- OPÇÕES DE ACESSO -->
+            <div class="cards-container">
+
+
+                <!-- CARD EPIs -->
+                <div class="card">
+
+                    <div class="card-icon">
+                        <span>🥽</span>
+                    </div>
+
+                    <h3>EPIs</h3>
+
+                    <p>
+                        Equipamentos de Proteção Individual.
+                        Gerencie os materiais de segurança.
+                    </p>
+
+                    <button onclick="acessarEPI()">
+                        Acessar setor
+                    </button>
+
+                </div>
+
+
+                <!-- CARD ESCOLARES -->
+                <div class="card">
+
+                    <div class="card-icon">
+                        <span>📚</span>
+                    </div>
+
+                    <h3>Materiais Escolares</h3>
+
+                    <p>
+                        Controle os materiais escolares,
+                        cadastros e movimentações.
+                    </p>
+
+                    <button onclick="acessarEscolares()">
+                        Acessar setor
+                    </button>
+
+                </div>
+
+
+                <!-- CARD UNIFORMES -->
+                <div class="card">
+
+                    <div class="card-icon">
+                        <span>👕</span>
+                    </div>
+
+                    <h3>Uniformes</h3>
+
+                    <p>
+                        Gerencie os uniformes,
+                        tamanhos, modelos e quantidades.
+                    </p>
+
+                    <button onclick="acessarUniformes()">
+                        Acessar setor
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="footer">
+
+            <p>
+                © 2026 SONAX SENAI.
+                Todos os direitos reservados.
+            </p>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
