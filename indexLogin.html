@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="css/styleLogin.css">
     <link rel="icon" type="image/png" href="img/Sonax.png">
 </head>
-
 <body>
 
     <main class="main-container">
@@ -35,7 +33,7 @@
                             placeholder="Usuário"
                             autocomplete="username"
                             required
-                            id="usuario"
+                            id="ipt-usuario"
                         >
                     </div>
 
@@ -46,11 +44,13 @@
                             placeholder="Senha"
                             autocomplete="current-password"
                             required
-                            id="senha"
+                            id="ipt-senha"
                         >
                     </div>
 
-                    <button type="submit" id="btnLogin">Entrar</button>
+                    <button type="submit" id="btnLogin" onclick="logar()">Entrar</button>
+                    
+                    
 
                 </form>
 
