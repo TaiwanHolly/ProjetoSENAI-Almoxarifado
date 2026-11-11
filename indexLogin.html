@@ -13,70 +13,51 @@
 
 <body>
 
-    <main class="main-container">
+    <main>
 
-        <!--ESQUERDA: LOGIN -->
-        <section class="leftbody">
+        <!-- LADO ESQUERDO: LOGIN -->
+        <section class="login">
 
-            <div class="login-container">
-
+            <div>
                 <h1>Bem-vindo à SONAX</h1>
 
                 <p>Controle de Almoxarifado</p>
                 <p>Faça login para acessar o Sistema</p>
 
                 <form>
+                    <input type="text" id="ipt-usuario" name="username"
+                        placeholder="Usuário" autocomplete="username" required>
 
-                    <div class="input-group">
-                        <input type="text" name="username" placeholder="Usuário" autocomplete="username" required
-                            id="ipt-usuario">
-                    </div>
-
-                    <div class="input-group">
-                        <input type="password" name="password" placeholder="Senha" autocomplete="current-password"
-                            required id="ipt-senha">
-                    </div>
+                    <input type="password" id="ipt-senha" name="password"
+                        placeholder="Senha" autocomplete="current-password" required>
 
                     <button type="submit" id="btnLogin" onclick="logar()">Entrar</button>
-
-                    <script src="js/LoginJS.js"></script>
-
                 </form>
-
             </div>
 
-            <div class="footer">
+            <footer>
                 <p>© 2026 SONAX SENAI. Todos os direitos reservados.</p>
-            </div>
+            </footer>
 
         </section>
 
+        <!-- LADO DIREITO: IDENTIDADE VISUAL -->
+        <section class="marca">
 
-        <!--DIREITA: AREA LIVRE ONDE FICA ENFEITES -->
-        <section class="rightbody">
-
-            <div class="brand-container">
-
-                <img src="img/Sonax.png" alt="Logo SONAX" class="logo" id="logo">
+            <div>
+                <img src="img/Sonax.png" alt="Logo SONAX">
 
                 <h2>SONAX</h2>
 
-                <p>
-                    Sistema de Controle de Almoxarifado
-                </p>
-
-                <div class="brand-description">
-                    <p>
-                        <b><i>Analise, adapte e alcance.</i></b>
-                    </p>
-                </div>
-
+                <p>Sistema de Controle de Almoxarifado</p>
+                <p><b><i>Analise, adapte e alcance.</i></b></p>
             </div>
 
         </section>
 
     </main>
 
-</body>
+    <script src="js/LoginJS.js"></script>
 
+</body>
 </html>

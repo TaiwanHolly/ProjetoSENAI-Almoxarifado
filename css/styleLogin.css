@@ -1,4 +1,3 @@
-
 /* CONFIGURAÇÕES GERAIS */
 
 * {
@@ -9,28 +8,22 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../img/BiggerWigglyYellow.gif');
-    background-size: cover;
-    background-position: center;
+    background: url('../img/BiggerWigglyYellow.gif') center/cover;
     min-height: 100vh;
 }
 
-
-/* DIVISÃO PRINCIPAL */
-
-.main-container {
+main {
     display: flex;
-    width: 100%;
     min-height: 100vh;
 }
 
 
-/* LADO ESQUERDO - LOGIN */
+/* LADO DO LOGIN */
 
-.leftbody {
+.login {
     width: 55%;
-    min-height: 100vh;
-    background-color: #ffffff;
+    padding: 40px;
+    background: white;
 
     display: flex;
     flex-direction: column;
@@ -38,272 +31,200 @@ body {
     align-items: center;
 
     position: relative;
-
-    padding: 40px;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.25);
     z-index: 1;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.25);
 }
 
-
-/* CONTAINER DO LOGIN */
-
-.login-container {
+.login div {
     width: 100%;
     max-width: 420px;
     text-align: center;
+    animation: entradaLogin 1s ease-out;
 }
 
-.login-container h1 {
+.login h1 {
     font-size: 32px;
-    color: #333333;
+    color: #333;
     margin-bottom: 12px;
 }
 
-.login-container > p {
+.login p {
     font-size: 17px;
-    color: #777777;
+    color: #777;
     margin-bottom: 40px;
 }
 
 
-/* CAMPOS DE LOGIN */
+/* CAMPOS E BOTÃO */
 
-.input-group {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.input-group input {
+input,
+button {
     width: 100%;
     height: 52px;
-
-    padding: 0 18px;
-
-    font-size: 16px;
-
-    border: 1px solid #cccccc;
     border-radius: 8px;
-
-    outline: none;
-
+    font-size: 16px;
     transition: 0.3s;
 }
 
-.input-group input:focus {
+input {
+    padding: 0 18px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus {
     border-color: #a0a429;
     box-shadow: 0 0 5px rgba(160, 164, 41, 0.3);
 }
 
-
-/* BOTÃO ENTRAR */
-
-.login-container button {
-    width: 100%;
-    height: 52px;
-
-    background-color: #a0a429;
-    color: #ffffff;
-
-    font-size: 17px;
+button {
+    background: #a0a429;
+    color: white;
     font-weight: bold;
-
     border: none;
-    border-radius: 8px;
-
     cursor: pointer;
-
-    transition: 0.3s;
 }
 
-.login-container button:hover {
-    background-color: #85891f;
+button:hover {
+    background: #85891f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.97);
 }
 
 
 /* RODAPÉ */
 
-.footer {
+footer {
     position: absolute;
     bottom: 15px;
-
     width: 100%;
-    text-align: center;
-
-    color: #777777;
-    font-size: 12px;
-
     padding: 10px;
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+}
+
+footer p {
+    margin: 0;
+    font-size: inherit;
 }
 
 
-/* LADO DIREITO - IDENTIDADE VISUAL */
+/* LADO DA MARCA */
 
-.rightbody {
+.marca {
     width: 45%;
-    min-height: 100vh;
+    padding: 40px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 40px;
-
-    background-color: rgba(160, 164, 41, 0.92);
-    opacity: 90%;
-}
-
-
-/* CONTEÚDO DA MARCA */
-
-.brand-container {
+    background: rgba(160, 164, 41, 0.92);
+    opacity: 0.9;
+    color: white;
     text-align: center;
-    color: #ffffff;
-    max-width: 500px;
 }
 
-.logo {
+.marca div {
+    max-width: 500px;
+    animation: aparecer 1.2s ease-out;
+}
+
+.marca img {
     width: 280px;
     height: 280px;
-
-    margin-bottom: 1px;
+    animation: flutuar 3s ease-in-out infinite;
 }
 
-.brand-container h2 {
+.marca h2 {
     font-size: 48px;
     letter-spacing: 5px;
     margin-bottom: 15px;
 }
 
-.brand-container > p {
+.marca p {
     font-size: 20px;
     font-weight: bold;
 }
 
-.brand-description {
+/* frase final (segundo parágrafo) */
+.marca p + p {
     margin-top: 35px;
     font-size: 16px;
     line-height: 1.7;
 }
 
 
-/* RESPONSIVIDADE */
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes entradaLogin {
+    from { opacity: 0; transform: translateX(-25px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-15px); }
+}
+
+
+/* RESPONSIVIDADE: não deixa a página apertada em telas pequenas */
 
 @media (max-width: 768px) {
 
-    .main-container {
+    main {
         flex-direction: column;
     }
 
-    .leftbody {
+    .login,
+    .marca {
         width: 100%;
+    }
+
+    .login {
         min-height: 65vh;
         padding: 40px 25px 70px;
     }
 
-    .rightbody {
-        width: 100%;
+    .login h1 {
+        font-size: 26px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    .marca {
         min-height: 35vh;
         padding: 30px 20px;
     }
 
-    .login-container h1 {
-        font-size: 26px;
-    }
-
-    .logo {
+    .marca img {
         width: 110px;
         height: 110px;
     }
 
-    .brand-container h2 {
+    .marca h2 {
         font-size: 32px;
     }
 
-    .brand-container > p {
+    .marca p {
         font-size: 16px;
     }
 
-    .brand-description {
+    .marca p + p {
         margin-top: 15px;
         font-size: 14px;
     }
-
-    .footer {
-        font-size: 10px;
-    }
-}
-
-
-/* !!!ANIMAÇÕES!!! */
-
-
-/* ANIMAÇÃO DE ENTRADA */
-
-.brand-container {
-    animation: aparecer 1.2s ease-out;
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ENTRADA DO LOGIN */
-
-.login-container {
-    animation: entradaLogin 1s ease-out;
-}
-
-@keyframes entradaLogin {
-    from {
-        opacity: 0;
-        transform: translateX(-25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-
-
-.logo {
-    animation: flutuar 3s ease-in-out infinite;
-}
-
-@keyframes flutuar {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-
-.login-container button {
-    transition: all 0.3s ease;
-}
-
-.login-container button:hover {
-    background-color: #85891f;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-}
-
-.login-container button:active {
-    transform: scale(0.97);
 }

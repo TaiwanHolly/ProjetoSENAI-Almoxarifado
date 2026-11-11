@@ -1,4 +1,3 @@
-
 /* CONFIGURAÇÕES GERAIS */
 
 * {
@@ -9,16 +8,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../img/BiggerWigglyYellow.gif');
-    background-size: cover;
-    background-position: center;
+    background: url('../img/BiggerWigglyYellow.gif') center/cover;
     min-height: 100vh;
 }
 
-
-/* CONTAINER PRINCIPAL */
-
-.main-container {
+main {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -28,39 +22,36 @@ body {
 
 /* CABEÇALHO */
 
-.header {
-    width: 100%;
+header {
     min-height: 95px;
+    padding: 15px 6%;
     background-color: #a0a429;
+    box-shadow: 0 5px 5px 2px #8c8c8c;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 15px 6%;
-    box-shadow: 0 5px 5px 2px #8c8c8c;
 }
 
-.brand {
+.logo {
     display: flex;
     align-items: center;
     user-select: none;
 }
 
-.brand img {
+.logo img {
     width: 65px;
     height: 65px;
     object-fit: contain;
-    user-select: none;
 }
 
-.brand h1 {
+header h1 {
     color: white;
     font-size: 30px;
     letter-spacing: 3px;
 }
 
-.header-info {
+.usuario {
     display: flex;
     align-items: center;
     gap: 25px;
@@ -68,20 +59,18 @@ body {
     font-weight: bold;
 }
 
-.btn-sair {
+header button {
     padding: 10px 22px;
     border: 2px solid white;
     border-radius: 8px;
-
     background: transparent;
     color: white;
-
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.btn-sair:hover {
+header button:hover {
     background-color: white;
     color: #a0a429;
 }
@@ -89,81 +78,73 @@ body {
 
 /* CONTEÚDO PRINCIPAL */
 
-.content {
+section {
     flex: 1;
+    padding: 60px 30px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 60px 30px;
+    animation: aparecer 0.8s ease-out;
 }
 
-
-/* BOAS-VINDAS */
-
-.welcome {
+.boas-vindas {
     text-align: center;
     margin-bottom: 55px;
 }
 
-.welcome h2 {
+.boas-vindas h2 {
     font-size: 36px;
-    color: #333333;
+    color: #333;
     margin-bottom: 15px;
 }
 
-.welcome p {
+.boas-vindas p {
     font-size: 17px;
-    color: #777777;
+    color: #777;
 }
 
 
 /* CARDS */
 
-.cards-container {
+.cards {
     display: flex;
     justify-content: center;
     align-items: stretch;
-
     gap: 30px;
     width: 100%;
     max-width: 1150px;
 }
 
 .card {
-    background-color: white;
-
     width: 33.33%;
     min-height: 340px;
-
     padding: 35px 25px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    user-select: none;
 
-    border-radius: 15px;
+    background-color: white;
     border: 1px solid #e5e5e5;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
 }
 
 .card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border-color: #a0a429;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-
-/* ÍCONES */
-
-.card-icon {
+.icone {
     width: 85px;
     height: 85px;
+    margin-bottom: 25px;
 
     display: flex;
     justify-content: center;
@@ -171,52 +152,34 @@ body {
 
     background-color: #f0f1df;
     border-radius: 50%;
-
-    margin-bottom: 25px;
-}
-
-.card-icon span {
     font-size: 38px;
-    user-select: none;
 }
-
-
-/* TEXTOS DOS CARDS */
 
 .card h3 {
-    color: #333333;
+    color: #333;
     font-size: 22px;
     margin-bottom: 15px;
-    user-select: none;
 }
 
 .card p {
-    color: #777777;
+    flex: 1;
+    color: #777;
     font-size: 15px;
     line-height: 1.6;
-    user-select: none;
-    flex: 1;
 }
-
-
-/* BOTÕES DOS CARDS */
 
 .card button {
     width: 100%;
     max-width: 220px;
     height: 48px;
-
     margin-top: 25px;
 
     background-color: #a0a429;
     color: white;
-
     border: none;
     border-radius: 8px;
-
     font-size: 15px;
     font-weight: bold;
-
     cursor: pointer;
     transition: 0.3s;
 }
@@ -229,33 +192,20 @@ body {
 
 /* RODAPÉ */
 
-.footer {
+footer {
     padding: 20px;
     text-align: center;
-
     background-color: white;
-    color: #777777;
-
+    color: #777;
     font-size: 12px;
 }
 
 
-/* ANIMAÇÕES */
-
-.content {
-    animation: aparecer 0.8s ease-out;
-}
+/* ANIMAÇÃO */
 
 @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 
@@ -263,37 +213,43 @@ body {
 
 @media (max-width: 850px) {
 
-    .cards-container {
+    .cards {
         flex-wrap: wrap;
     }
 
     .card {
         width: 45%;
     }
-
 }
 
 @media (max-width: 600px) {
 
-    .header {
+    header,
+    .usuario {
         flex-direction: column;
+    }
+
+    header {
         gap: 15px;
     }
 
-    .header-info {
-        flex-direction: column;
+    .usuario {
         gap: 12px;
     }
 
-    .welcome h2 {
+    section {
+        padding: 40px 20px;
+    }
+
+    .boas-vindas h2 {
         font-size: 27px;
     }
 
-    .welcome p {
+    .boas-vindas p {
         font-size: 15px;
     }
 
-    .cards-container {
+    .cards {
         flex-direction: column;
         align-items: center;
     }
@@ -302,9 +258,4 @@ body {
         width: 100%;
         max-width: 380px;
     }
-
-    .content {
-        padding: 40px 20px;
-    }
-
 }
