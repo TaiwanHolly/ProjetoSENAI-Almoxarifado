@@ -44,12 +44,14 @@ body {
 .brand {
     display: flex;
     align-items: center;
+    user-select: none;
 }
 
 .brand img {
     width: 65px;
     height: 65px;
     object-fit: contain;
+    user-select: none;
 }
 
 .brand h1 {
@@ -152,7 +154,6 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border-color: #a0a429;
 }
@@ -176,6 +177,7 @@ body {
 
 .card-icon span {
     font-size: 38px;
+    user-select: none;
 }
 
 
@@ -185,13 +187,14 @@ body {
     color: #333333;
     font-size: 22px;
     margin-bottom: 15px;
+    user-select: none;
 }
 
 .card p {
     color: #777777;
     font-size: 15px;
     line-height: 1.6;
-
+    user-select: none;
     flex: 1;
 }
 
