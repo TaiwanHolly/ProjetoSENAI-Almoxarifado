@@ -24,7 +24,7 @@
             </div>
 
             <div class="usuario">
-                <span>{nomeUsuario}</span>
+                <span>${nomeUsuario}</span>
                 <button onclick="sair()">Sair</button>
             </div>
 
@@ -35,8 +35,8 @@
         <section>
 
             <div class="boas-vindas">
-                <h2>Bem-vindo {nomeUsuario}!</h2>
-                <p>Selecione o setor que deseja acessar para gerenciar os materiais.</p>
+                <h2>Bem-vindo ${nomeUsuario}!</h2>
+                <p>Selecione o setor para gerenciar os materiais.</p>
             </div>
 
             <!-- OPÇÕES -->
@@ -45,21 +45,21 @@
                 <div class="card">
                     <div class="icone">🥽</div>
                     <h3>EPIs</h3>
-                    <p>Equipamentos de Proteção Individual. Gerencie os materiais de segurança.</p>
+                    <p>Equipamentos de Proteção Individual.</p>
                     <button onclick="acessarEPIs()">Acessar setor</button>
                 </div>
 
                 <div class="card">
                     <div class="icone">📚</div>
                     <h3>Materiais Escolares</h3>
-                    <p>Controle os materiais escolares, cadastros e movimentações.</p>
+                    <p>Materiais escolares, cadastros e movimentações.</p>
                     <button onclick="acessarEscolares()">Acessar setor</button>
                 </div>
 
                 <div class="card">
                     <div class="icone">👕</div>
                     <h3>Uniformes</h3>
-                    <p>Gerencie os uniformes, tamanhos, modelos e quantidades.</p>
+                    <p>Uniformes, tamanhos, modelos e quantidades.</p>
                     <button onclick="acessarUniformes()">Acessar setor</button>
                 </div>
 
