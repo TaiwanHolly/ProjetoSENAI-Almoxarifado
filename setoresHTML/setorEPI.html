@@ -18,7 +18,12 @@
     <script>
         if(!localStorage.getItem("meuToken")) {
             alert("Usuario não identificado, faça login.")
-            window.location.href = "indexLogin.html"
+            window.location.href = "../indexLogin.html"
+        }
+
+        function sair() {
+            localStorage.clear()
+            window.location.href = "../indexLogin.html"
         }
     </script>
 

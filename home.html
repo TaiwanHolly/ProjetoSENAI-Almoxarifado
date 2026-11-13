@@ -19,6 +19,11 @@
             alert("Usuario não identificado, faça login.")
             window.location.href = "indexLogin.html"
         }
+
+        function sair() {
+            localStorage.clear()
+            window.location.href = "indexLogin.html"
+        }
     </script>
 
 
@@ -65,7 +70,8 @@
                     <div class="icone">🥽</div>
                     <h3>EPIs</h3>
                     <p>Equipamentos de Proteção Individual.</p>
-                    <button onclick="acessarEPIs()">Acessar setor</button>
+                    <button><a href="setoresHTML/setorEPI.html" style="color: white;">Acessar setor</a></button>
+                    <!---onclick="acessarEPIs()--->
                 </div>
 
                 <div class="card">
