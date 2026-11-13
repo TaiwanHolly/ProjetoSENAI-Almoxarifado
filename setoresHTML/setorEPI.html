@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SONAX | Gerenciamento de EPIs</title>
+
+    <link rel="stylesheet" href="../css/styleSetores.css">
+    <link rel="icon" type="image/png" href="../img/Sonax.png">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- CABEÇALHO -->
+        <header>
+
+            <div class="logo">
+                <img src="../img/Sonax.png" alt="Logo SONAX">
+                <h1>SONAX</h1>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="../home.html">Início</a></li>
+                    <li><a href="../sobre.html">Sobre</a></li>
+                    <li><a href="../solicitações.html">Solicitações</a></li>
+                </ul>
+            </nav>
+
+            <div class="usuario">
+                <span>${nomeUsuario}</span>
+                <button onclick="sair()">Sair</button>
+            </div>
+
+        </header>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section>
+
+            <div class="titulo">
+                <h2>Gerenciamento de EPIs</h2>
+                <p>Cadastre e gerencie os equipamentos de proteção individual.</p>
+            </div>
+
+
+            <!-- ÁREAS DE CADASTRO E TABELA -->
+            <div class="conteudo">
+
+                <!-- FORMULÁRIO DE CADASTRO -->
+                <div class="cadastro">
+
+                    <h3>Cadastrar EPI</h3>
+
+                    <form id="formCadastro">
+
+                        <label for="nome">Nome do EPI</label>
+                        <input type="text" id="nome"
+                            placeholder="Digite o nome do EPI" required>
+
+                        <label for="ca">Número do CA</label>
+                        <input type="text" id="ca"
+                            placeholder="Digite o número do CA">
+
+                        <label for="validade">Validade</label>
+                        <input type="date" id="validade">
+
+                        <label for="quantidade">Quantidade</label>
+                        <input type="number" id="quantidade"
+                            placeholder="Digite a quantidade" min="0" required>
+
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao"
+                            placeholder="Informações adicionais"></textarea>
+
+                        <button type="submit">Cadastrar EPI</button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- TABELA DE MATERIAIS -->
+                <div class="lista">
+
+                    <h3>EPIs cadastrados</h3>
+
+                    <input type="text" id="pesquisa"
+                        placeholder="Pesquisar EPI...">
+
+                    <div class="tabela">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>C.A.</th>
+                                    <th>Variação</th>
+                                    <th>Quantidade</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tabelaDados">
+
+                                <!-- CADASTROS DE EXEMPLO -->
+
+                                <!--
+                                <tr>
+                                    <td>Capacete</td>
+                                    <td>12345</td>
+                                    <td>2027-05-10</td>
+                                    <td>20</td>
+                                    <td>Proteção para cabeça</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luva</td>
+                                    <td>54321</td>
+                                    <td>2027-08-15</td>
+                                    <td>35</td>
+                                    <td>Proteção para as mãos</td>
+                                </tr>
+                                -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer>
+            <p>© 2026 SONAX SENAI. Todos os direitos reservados.</p>
+        </footer>
+
+    </main>
+
+    <script src="js/setor.js"></script>
+
+</body>
+</html>

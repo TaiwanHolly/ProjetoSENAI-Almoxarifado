@@ -1,0 +1,312 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../img/BiggerWigglyYellow.gif') center/cover;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.94);
+}
+
+
+/* CABEÇALHO */
+
+header {
+    min-height: 95px;
+    padding: 15px 6%;
+    background-color: #a0a429;
+    box-shadow: 0 5px 5px 2px #8c8c8c;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+header h1 {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+header button {
+    padding: 10px 22px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button:hover {
+    background-color: white;
+    color: #a0a429;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+section {
+    flex: 1;
+    padding: 40px 5%;
+    animation: aparecer 0.8s ease-out;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.titulo p {
+    color: #777;
+    font-size: 16px;
+}
+
+
+/* DIVISÃO DAS DUAS ÁREAS */
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    max-width: 1450px;
+    margin: auto;
+    align-items: start;
+}
+
+
+/* FORMULÁRIO */
+
+.cadastro,
+.lista {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cadastro h3,
+.lista h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #444;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #a0a429;
+}
+
+form button {
+    padding: 14px;
+    background-color: #a0a429;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #85891f;
+    transform: scale(1.02);
+}
+
+
+/* TABELA */
+
+.lista {
+    min-width: 0;
+}
+
+#pesquisa {
+    max-width: 350px;
+}
+
+.tabela {
+    max-height: 550px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #a0a429;
+    color: white;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f5f5e9;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .conteudo {
+        grid-template-columns: 300px 1fr;
+        gap: 15px;
+    }
+
+    .cadastro,
+    .lista {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .usuario {
+        gap: 12px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo h2 {
+        font-size: 27px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+}

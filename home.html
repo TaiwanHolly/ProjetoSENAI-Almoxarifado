@@ -13,6 +13,15 @@
 
 <body>
 
+    <!--CASO LOGIN NÃO FUNCIONA VOLTA PRA TELA DE LOGIN COM ERRO-->
+    <script>
+        if(!localStorage.getItem("meuToken")) {
+            alert("Usuario não identificado, faça login.")
+            window.location.href = "indexLogin.html"
+        }
+    </script>
+
+
     <main>
 
         <!-- CABEÇALHO -->
