@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,7 +15,7 @@
 
     <!--CASO LOGIN NÃO FUNCIONA VOLTA PRA TELA DE LOGIN COM ERRO-->
     <script>
-        if(!localStorage.getItem("meuToken")) {
+        if (!localStorage.getItem("meuToken")) {
             alert("Usuario não identificado, faça login.")
             window.location.href = "../indexLogin.html"
         }
@@ -73,27 +72,25 @@
                     <form id="formCadastro">
 
                         <label for="nome">Nome do EPI</label>
-                        <input type="text" id="nome"
-                            placeholder="Digite o nome do EPI" required>
+                        <input type="text" id="nome" placeholder="Digite o nome do EPI" required>
 
                         <label for="ca">Número do CA</label>
-                        <input type="text" id="ca"
-                            placeholder="Digite o número do CA">
+                        <input type="text" id="ca" placeholder="Digite o número do C.A.">
 
-                        <label for="validade">Validade</label>
-                        <input type="date" id="validade">
+                        <label for="variacao">Variação</label>
+                        <input type="text" id="variacao">
 
                         <label for="quantidade">Quantidade</label>
-                        <input type="number" id="quantidade"
-                            placeholder="Digite a quantidade" min="0" required>
+                        <input type="number" id="quantidade" placeholder="Digite a quantidade" min="0" required>
 
                         <label for="descricao">Descrição</label>
-                        <textarea id="descricao"
-                            placeholder="Informações adicionais"></textarea>
+                        <textarea id="descricao" placeholder="Informações adicionais"></textarea>
 
-                        <button type="submit">Cadastrar EPI</button>
+                        <button type="submit" onclick="cadastro()">Cadastrar EPI</button>
 
                     </form>
+                    
+                    <script src="../js/setorRegistrarJS.js"></script>
 
                 </div>
 
@@ -103,8 +100,7 @@
 
                     <h3>EPIs cadastrados</h3>
 
-                    <input type="text" id="pesquisa"
-                        placeholder="Pesquisar EPI...">
+                    <input type="text" id="pesquisa" placeholder="Pesquisar EPI...">
 
                     <div class="tabela">
 
@@ -165,4 +161,5 @@
     <script src="js/setor.js"></script>
 
 </body>
+
 </html>

@@ -12,7 +12,7 @@ async function logar() {
   //verificar se o login foi bem sucedido
   if (resposta.ok) {
     const dados = await resposta.json();
-    localStorage.setItem("meuToken", dados.token);
+    localStorage.setItem("meuToken", "autenticado");
     localStorage.setItem("nomeUsuario", dados.nome);
     window.location.href = "home.html";
   } else {
