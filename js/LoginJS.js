@@ -14,13 +14,13 @@ async function logar() {
     const dados = await resposta.json();
     localStorage.setItem("meuToken", "autenticado");
     localStorage.setItem("nomeUsuario", dados.nome);
-    localStorage.setItem("TipoUsuario", dados.tipo_usuario_id)
+    localStorage.setItem("TipoUsuario", dados.tipo)
     window.location.href = "home.html";
   } else {
     console.log("Erro ao logar");
   }
 }
 
-function convidado() {
-  window.location.href = "homeProfessor.html";
+function pageswap() {
+  window.location.href = "indexCadastro.html";
 }
