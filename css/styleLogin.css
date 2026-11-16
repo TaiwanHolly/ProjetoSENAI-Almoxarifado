@@ -78,6 +78,18 @@ input:focus {
     box-shadow: 0 0 5px rgba(160, 164, 41, 0.3);
 }
 
+select {
+    padding: 0 18px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+select:focus {
+    border-color: #a0a429;
+    box-shadow: 0 0 5px rgba(160, 164, 41, 0.3);
+}
+
 button {
     background: #a0a429;
     color: white;

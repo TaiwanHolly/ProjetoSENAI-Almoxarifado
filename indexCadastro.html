@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>SONAX - Controle de Almoxarifado</title>
+    <title>SONAX - Cadastro</title>
 
     <link rel="stylesheet" href="css/styleLogin.css" />
     <link rel="icon" type="image/png" href="img/Sonax.png" />
@@ -18,28 +18,39 @@
           <h1>Bem-vindo à SONAX</h1>
 
           <p>Controle de Almoxarifado</p>
-          <p>Faça login para acessar o Sistema</p>
+          <p>Faça o cadastro</p>
 
           <form>
             <input
               type="text"
-              id="ipt-usuario"
+              id="nome-usuario"
               name="username"
-              placeholder="Usuário"
+              placeholder="Nome do Usuário"
               autocomplete="username"
-              required
+            />
+
+            <input
+              type="text"
+              id="usuario"
+              name="username"
+              placeholder="Usuário (Login)"
+              autocomplete="username"
             />
 
             <input
               type="password"
-              id="ipt-senha"
+              id="senha"
               name="password"
               placeholder="Senha"
               autocomplete="current-password"
-              required
             />
 
-            <button type="submit" id="btnLogin" onclick="logar()">
+            <select id="tipo" title="role">
+                <option value="2">Professor</option>
+                <option value="3">Cordenador</option>
+            </select>
+
+            <button id="btnLogin" onclick="cadastrar()">
               Entrar
             </button>
           </form>
@@ -68,7 +79,7 @@
       </section>
     </main>
 
-   
+   <script src="js/CadastroJS.js"></script>
 
   </body>
 </html>
