@@ -309,3 +309,10 @@ footer {
         padding: 30px 15px;
     }
 }
+
+table button {
+    padding: 5px;
+    color: #ddd;
+    background-color: rgb(180, 14, 14);
+    border-radius: 20px;
+}
