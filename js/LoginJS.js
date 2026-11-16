@@ -14,6 +14,7 @@ async function logar() {
     const dados = await resposta.json();
     localStorage.setItem("meuToken", "autenticado");
     localStorage.setItem("nomeUsuario", dados.nome);
+    localStorage.setItem("TipoUsuario", dados.tipo_usuario_id)
     window.location.href = "home.html";
   } else {
     console.log("Erro ao logar");
