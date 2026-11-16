@@ -1,0 +1,284 @@
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../img/BiggerWigglyYellow.gif') center/cover;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.94);
+}
+
+
+/* CABEÇALHO */
+
+header {
+    min-height: 95px;
+    padding: 15px 6%;
+    background-color: #a0a429;
+    box-shadow: 0 5px 5px 2px #8c8c8c;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+header h1 {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+header button {
+    padding: 10px 22px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button:hover {
+    background-color: white;
+    color: #a0a429;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+section {
+    flex: 1;
+    padding: 60px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: aparecer 0.8s ease-out;
+}
+
+.boas-vindas {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.boas-vindas h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.boas-vindas p {
+    font-size: 17px;
+    color: #777;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+    max-width: 1150px;
+}
+
+.card {
+    width: 33.33%;
+    min-height: 340px;
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #a0a429;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icone {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f0f1df;
+    border-radius: 50%;
+    font-size: 38px;
+}
+
+.card h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    flex: 1;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.card button {
+    width: 100%;
+    max-width: 220px;
+    height: 48px;
+    margin-top: 25px;
+
+    background-color: #a0a429;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background-color: #85891f;
+    transform: scale(1.04);
+}
+
+
+/* RODAPÉ */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    .cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header,
+    .usuario {
+        flex-direction: column;
+    }
+
+    header {
+        gap: 15px;
+    }
+
+    .usuario {
+        gap: 12px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .boas-vindas h2 {
+        font-size: 27px;
+    }
+
+    .boas-vindas p {
+        font-size: 15px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 380px;
+    }
+}

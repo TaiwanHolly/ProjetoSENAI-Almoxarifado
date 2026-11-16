@@ -1,6 +1,5 @@
 // função principal. cadastra um novo material na tabela selecionada XD
 function cadastrarMaterial() {
-
   //pega valor
   let tipoAlmoxarifado = document.getElementById("almoxarifado").value;
   let nome = document.getElementById("nomeMaterial").value;
@@ -54,7 +53,8 @@ function cadastrarMaterial() {
 
   //Coloca o botão de excluir
   // O botão tem 'this' para identificar qual linha vai ser removida
-  celulaAcoes.innerHTML = '<button type="button" class="btn-excluir" onclick="excluirMaterial(this)">Excluir</button>';
+  celulaAcoes.innerHTML =
+    '<button type="button" class="btn-excluir" onclick="excluirMaterial(this)">Excluir</button>';
 
   alert("Material cadastrado com sucesso!");
   limparFormulario();
@@ -62,9 +62,10 @@ function cadastrarMaterial() {
 
 //Tira a linha do material cadastrado após confirmação
 function excluirMaterial(botaoClicado) {
-
   //pergunta de confirmação antes de apagar o item
-  let confirmacao = confirm("Tem certeza que deseja excluir este item do estoque?");
+  let confirmacao = confirm(
+    "Tem certeza que deseja excluir este item do estoque?",
+  );
 
   if (confirmacao == true) {
     // Localiza a célula

@@ -1,126 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>SONAX | Gerenciamento de EPIs</title>
 
-    <link rel="stylesheet" href="../css/styleSetores.css">
-    <link rel="icon" type="image/png" href="../img/Sonax.png">
-</head>
+    <link rel="stylesheet" href="../css/styleSetores.css" />
+    <link rel="icon" type="image/png" href="../img/Sonax.png" />
+  </head>
 
-<body>
-
+  <body>
     <!--CASO LOGIN NÃO FUNCIONA VOLTA PRA TELA DE LOGIN COM ERRO-->
     <script>
-        if (!localStorage.getItem("meuToken")) {
-            alert("Usuario não identificado, faça login.")
-            window.location.href = "../indexLogin.html"
-        }
+      if (!localStorage.getItem("meuToken")) {
+        alert("Usuario não identificado, faça login.");
+        window.location.href = "../indexLogin.html";
+      }
 
-        function sair() {
-            localStorage.clear()
-            window.location.href = "../indexLogin.html"
-        }
+      function sair() {
+        localStorage.clear();
+        window.location.href = "../indexLogin.html";
+      }
     </script>
 
     <main>
+      <!-- CABEÇALHO -->
+      <header>
+        <div class="logo">
+          <img src="../img/Sonax.png" alt="Logo SONAX" />
+          <h1>SONAX</h1>
+        </div>
 
-        <!-- CABEÇALHO -->
-        <header>
+        <nav>
+          <ul>
+            <li><a href="../home.html">Início</a></li>
+            <li><a href="../sobre.html">Sobre</a></li>
+            <li><a href="../solicitações.html">Solicitações</a></li>
+          </ul>
+        </nav>
 
-            <div class="logo">
-                <img src="../img/Sonax.png" alt="Logo SONAX">
-                <h1>SONAX</h1>
-            </div>
+        <div class="usuario">
+          <span>${nomeUsuario}</span>
+          <button onclick="sair()">Sair</button>
+        </div>
+      </header>
 
-            <nav>
-                <ul>
-                    <li><a href="../home.html">Início</a></li>
-                    <li><a href="../sobre.html">Sobre</a></li>
-                    <li><a href="../solicitações.html">Solicitações</a></li>
-                </ul>
-            </nav>
+      <!-- CONTEÚDO PRINCIPAL -->
+      <section>
+        <div class="titulo">
+          <h2>Gerenciamento de EPIs</h2>
+          <p>Cadastre e gerencie os equipamentos de proteção individual.</p>
+        </div>
 
-            <div class="usuario">
-                <span>${nomeUsuario}</span>
-                <button onclick="sair()">Sair</button>
-            </div>
+        <!-- ÁREAS DE CADASTRO E TABELA -->
+        <div class="conteudo">
+          <!-- FORMULÁRIO DE CADASTRO -->
+          <div class="cadastro">
+            <h3>Cadastrar EPI</h3>
 
-        </header>
+            <form id="formCadastro">
+              <label for="nome">Nome do EPI</label>
+              <input
+                type="text"
+                id="nome"
+                placeholder="Digite o nome do EPI"
+                required
+              />
 
+              <label for="ca">Número do CA</label>
+              <input
+                type="text"
+                id="ca"
+                placeholder="Digite o número do C.A."
+              />
 
-        <!-- CONTEÚDO PRINCIPAL -->
-        <section>
+              <label for="variacao">Variação</label>
+              <input type="text" id="variacao" />
 
-            <div class="titulo">
-                <h2>Gerenciamento de EPIs</h2>
-                <p>Cadastre e gerencie os equipamentos de proteção individual.</p>
-            </div>
+              <label for="quantidade">Quantidade</label>
+              <input
+                type="number"
+                id="quantidade"
+                placeholder="Digite a quantidade"
+                min="0"
+                required
+              />
 
+              <label for="descricao">Descrição</label>
+              <textarea
+                id="descricao"
+                placeholder="Informações adicionais"
+              ></textarea>
 
-            <!-- ÁREAS DE CADASTRO E TABELA -->
-            <div class="conteudo">
+              <button type="submit" onclick="cadastro()">Cadastrar EPI</button>
+            </form>
 
-                <!-- FORMULÁRIO DE CADASTRO -->
-                <div class="cadastro">
+            <script src="../js/setorRegistrarJS.js"></script>
+          </div>
 
-                    <h3>Cadastrar EPI</h3>
+          <!-- TABELA DE MATERIAIS -->
+          <div class="lista">
+            <h3>EPIs cadastrados</h3>
 
-                    <form id="formCadastro">
+            <input type="text" id="pesquisa" placeholder="Pesquisar EPI..." />
 
-                        <label for="nome">Nome do EPI</label>
-                        <input type="text" id="nome" placeholder="Digite o nome do EPI" required>
+            <div class="tabela">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>C.A.</th>
+                    <th>Variação</th>
+                    <th>Quantidade</th>
+                    <th>Descrição</th>
+                  </tr>
+                </thead>
 
-                        <label for="ca">Número do CA</label>
-                        <input type="text" id="ca" placeholder="Digite o número do C.A.">
+                <tbody id="tabelaDados">
+                  <!-- CADASTROS DE EXEMPLO -->
 
-                        <label for="variacao">Variação</label>
-                        <input type="text" id="variacao">
-
-                        <label for="quantidade">Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Digite a quantidade" min="0" required>
-
-                        <label for="descricao">Descrição</label>
-                        <textarea id="descricao" placeholder="Informações adicionais"></textarea>
-
-                        <button type="submit" onclick="cadastro()">Cadastrar EPI</button>
-
-                    </form>
-                    
-                    <script src="../js/setorRegistrarJS.js"></script>
-
-                </div>
-
-
-                <!-- TABELA DE MATERIAIS -->
-                <div class="lista">
-
-                    <h3>EPIs cadastrados</h3>
-
-                    <input type="text" id="pesquisa" placeholder="Pesquisar EPI...">
-
-                    <div class="tabela">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>C.A.</th>
-                                    <th>Variação</th>
-                                    <th>Quantidade</th>
-                                    <th>Descrição</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="tabelaDados">
-
-                                <!-- CADASTROS DE EXEMPLO -->
-
-                                <!--
+                  <!--
                                 <tr>
                                     <td>Capacete</td>
                                     <td>12345</td>
@@ -137,29 +137,19 @@
                                     <td>Proteção para as mãos</td>
                                 </tr>
                                 -->
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
+                </tbody>
+              </table>
             </div>
+          </div>
+        </div>
+      </section>
 
-        </section>
-
-
-        <!-- RODAPÉ -->
-        <footer>
-            <p>© 2026 SONAX SENAI. Todos os direitos reservados.</p>
-        </footer>
-
+      <!-- RODAPÉ -->
+      <footer>
+        <p>© 2026 SONAX SENAI. Todos os direitos reservados.</p>
+      </footer>
     </main>
 
     <script src="js/setor.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -19,3 +19,7 @@ async function logar() {
     console.log("Erro ao logar");
   }
 }
+
+function convidado() {
+  window.location.href = "homeProfessor.html";
+}
