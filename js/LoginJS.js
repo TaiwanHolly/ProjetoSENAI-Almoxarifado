@@ -1,3 +1,8 @@
+if(localStorage.getItem("meuToken")) {
+  window.location.href = "home.html"
+}
+
+
 async function logar() {
   //pegar os valores dos campos de login
   const usuario = document.getElementById("ipt-usuario").value;
