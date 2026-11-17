@@ -11,8 +11,21 @@ async function cadastrar() {
     nome: document.getElementById("nome-usuario").value,
     usuario: document.getElementById("usuario").value,
     senha: document.getElementById("senha").value,
-    tipoUsuario: parseInt(document.getElementById("tipo").value),
+    tipoUsuarioId: parseInt(document.getElementById("tipo").value),
   };
+
+  const resposta = await fetch("http://localhost:8080/api/cadastro", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(dados)
+  })
+
+  if(resposta.ok){
+    alert("Usuário cadastrado com sucesso.")
+  }else{
+    alert("Erro ao cadastrar, tente novamente mais tarde.")
+  }
+
 }
 
 function pageswap() {
