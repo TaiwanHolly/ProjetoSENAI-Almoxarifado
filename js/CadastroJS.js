@@ -29,5 +29,5 @@ async function cadastrar() {
 }
 
 function pageswap() {
-  window.location.href = "indexLogin.html";
+  window.location.href = "home.html";
 }
