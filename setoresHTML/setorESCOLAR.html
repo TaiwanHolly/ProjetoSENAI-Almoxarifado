@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SONAX | Gerenciamento de Materiais</title>
+
+  <link rel="stylesheet" href="../css/styleSetores.css" />
+  <link rel="icon" type="image/png" href="../img/Sonax.png" />
+</head>
+
+<body>
+  <!--CASO LOGIN NÃO FUNCIONA VOLTA PRA TELA DE LOGIN COM ERRO-->
+  <script>
+    if (!localStorage.getItem("meuToken")) {
+      alert("Usuario não identificado, faça login.");
+      window.location.href = "../indexLogin.html";
+    }
+
+    function sair() {
+      localStorage.clear();
+      window.location.href = "../indexLogin.html";
+    }
+  </script>
+
+  <main>
+    <!-- CABEÇALHO -->
+    <header>
+      <div class="logo">
+        <img src="../img/Sonax.png" alt="Logo SONAX" />
+        <h1>SONAX</h1>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="../home.html">Início</a></li>
+          <li><a href="../sobre.html">Sobre</a></li>
+          <li><a href="../solicitações.html">Solicitações</a></li>
+        </ul>
+      </nav>
+
+      <div class="usuario">
+        <span>${nomeUsuario}</span>
+        <button onclick="sair()">Sair</button>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section>
+      <div class="titulo">
+        <h2>Gerenciamento de Materiais</h2>
+        <p>Cadastre e gerencie os materiais escolares.</p>
+      </div>
+
+      <!-- ÁREAS DE CADASTRO E TABELA -->
+      <div class="conteudo">
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <div class="cadastro">
+          <h3>Cadastrar Material</h3>
+
+          <form id="formCadastro">
+            <label for="nome">Nome do Material</label>
+            <input type="text" id="nome" placeholder="Digite o nome do Material" required />
+
+            <label for="ca">Número do CA</label>
+            <input type="text" id="ca" placeholder="Digite o número do C.A." />
+
+            <label for="variacao">Variação</label>
+            <input type="text" id="variacao" />
+
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" placeholder="Digite a quantidade" min="0" required />
+
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" placeholder="Informações adicionais"></textarea>
+
+            <button type="submit">Cadastrar Material</button>
+          </form>
+        </div>
+
+        <!-- TABELA DE MATERIAIS -->
+        <div class="lista">
+          <h3>Materiais cadastrados</h3>
+
+          <input type="text" id="pesquisa" placeholder="Pesquisar Material..." />
+
+          <div class="tabela">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>C.A.</th>
+                  <th>Variação</th>
+                  <th>Quantidade</th>
+                  <th>Descrição</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+
+              <tbody id="tabelaDados">
+                <!-- coiso aqui -->
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <p>© 2026 SONAX SENAI. Todos os direitos reservados.</p>
+    </footer>
+  </main>
+
+  <script src="../js/setorEscolarJS.js"></script>
+
+</body>
+
+</html>
