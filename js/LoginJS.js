@@ -1,3 +1,5 @@
+console.log("Código nosso que estás em C# Santificado seja vosso console, venha a nós o vosso array[10] e seja feita, assim, {vossa chave} assim no if{} como no else{}. O for(nosso;de cada dia; nos dai hoje++). Debugai as nossas sentenças assim como nós colocamos o ponto e vírgula esquecido; E não deixeis errar identação mas livrai-nos das funções recursivas. A main()")
+
 if(localStorage.getItem("meuToken")) {
   window.location.href = "home.html"
 }
