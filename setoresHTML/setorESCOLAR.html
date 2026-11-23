@@ -67,16 +67,16 @@
             <label for="ca">Número do CA</label>
             <input type="text" id="ca" placeholder="Digite o número do C.A." />
 
-            <label for="variacao">Variação</label>
-            <input type="text" id="variacao" />
+            <label for="tipo">Variação</label>
+            <select title="Tipo" id="tipo">
+              <option value="Consumivel">Consumivel</option>
+              <option value="Devolutivo">Devolutivo</option>
+            </select>
 
             <label for="quantidade">Quantidade</label>
             <input type="number" id="quantidade" placeholder="Digite a quantidade" min="0" required />
 
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" placeholder="Informações adicionais"></textarea>
-
-            <button type="submit">Cadastrar Material</button>
+            <button type="button" onclick="cadastrarMaterial()">Cadastrar Material</button>
           </form>
         </div>
 
@@ -92,9 +92,8 @@
                 <tr>
                   <th>Nome</th>
                   <th>C.A.</th>
-                  <th>Variação</th>
+                  <th>Tipo</th>
                   <th>Quantidade</th>
-                  <th>Descrição</th>
                   <th>Ações</th>
                 </tr>
               </thead>
@@ -115,7 +114,7 @@
     </footer>
   </main>
 
-  <script src="../js/setorEscolarJS.js"></script>
+  <script src="../js/ESCOLAR2.js"></script>
 
 </body>
 
