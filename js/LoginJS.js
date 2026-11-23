@@ -25,6 +25,7 @@ async function logar() {
     window.location.href = "home.html";
   } else {
     console.log("Erro ao logar");
+    alert("Usuario ou senha incorretos.");
   }
 }
 
