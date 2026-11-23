@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="img/Sonax.png">
 </head>
 
-<body>
+<body onload="mostrarNome()">
 
     <!--CASO LOGIN NÃO FUNCIONA VOLTA PRA TELA DE LOGIN COM ERRO-->
     <script>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="usuario">
-                <span>${nomeUsuario}</span>
+                <span id="MostrarNome">Guest</span>
                 <button onclick="sair()">Sair</button>
             </div>
 
@@ -58,8 +58,8 @@
         <!-- CONTEÚDO PRINCIPAL -->
         <section>
 
-            <div class="boas-vindas">
-                <h2>Bem-vindo ${nomeUsuario}!</h2>
+            <div class="boas-vindas" onload="mostrarNome()">
+                <h2>Bem-vindo ao Almoxarifado.</h2>
                 <p>Selecione o setor para gerenciar os materiais.</p>
             </div>
 

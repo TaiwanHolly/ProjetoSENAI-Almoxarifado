@@ -24,3 +24,7 @@ function acessarCadastro() {
     window.location.href = "indexCadastro.html"
   }
 }
+
+    function mostrarNome() {
+      document.getElementById("MostrarNome").textContent = localStorage.getItem("nomeUsuario");
+    }
