@@ -65,18 +65,26 @@
             <input type="text" id="nome" placeholder="Digite o nome do EPI" required />
 
             <label for="ca">Número do CA</label>
-            <input type="text" id="ca" placeholder="Digite o número do C.A." />
+            <input type="text" id="ca" placeholder="Digite o número do C.A." required/>
 
             <label for="variacao">Variação</label>
-            <input type="text" id="variacao" />
+            <select title="Tamanho" id="variacao">
+              <option value="não especificado">...</option>
+              <option value="PP">PP</option>
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+              <option value="GG">GG</option>
+            </select>
+            
 
             <label for="quantidade">Quantidade</label>
             <input type="number" id="quantidade" placeholder="Digite a quantidade" min="0" required />
 
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" placeholder="Informações adicionais"></textarea>
+            <label for="calcado">Número calçado</label>
+            <input type="number" id="calcado" placeholder="Número calçado" min="5" step="1"/>
 
-            <button type="submit">Cadastrar EPI</button>
+            <button type="button" onclick="cadastrarEPI()">Cadastrar EPI</button>
           </form>
         </div>
 
@@ -94,7 +102,7 @@
                   <th>C.A.</th>
                   <th>Variação</th>
                   <th>Quantidade</th>
-                  <th>Descrição</th>
+                  <th>Calçado</th>
                   <th>Ações</th>
                 </tr>
               </thead>
@@ -115,7 +123,7 @@
     </footer>
   </main>
 
-  <script src="../js/setorEpiJS.js"></script>
+  <script src="../js/EPI2.js"></script>
 
 </body>
 

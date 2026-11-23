@@ -42,7 +42,7 @@ function mostrarEPIs() {
         linha.insertCell().innerText = epi.ca;
         linha.insertCell().innerText = epi.variacao;
         linha.insertCell().innerText = epi.quantidade;
-        linha.insertCell().innerText = epi.descricao;
+        linha.insertCell().innerText = epi.calcado;
 
         //Cria um botão para excluir o EPI da tabela.
         let botaoExcluir = document.createElement("button");
@@ -80,7 +80,7 @@ formulario.addEventListener("submit", function(event) {
     let ca = document.getElementById("ca").value;
     let variacao = document.getElementById("variacao").value;
     let quantidade = document.getElementById("quantidade").value;
-    let descricao = document.getElementById("descricao").value;
+    let calcado = document.getElementById("calcado").value;
 
     //Cria um objeto contendo todas as informações do novo EPI.
     //Cada informação é armazenada com um nome para facilitar sua utilização.
@@ -90,7 +90,7 @@ formulario.addEventListener("submit", function(event) {
         ca: ca,
         variacao: variacao,
         quantidade: quantidade,
-        descricao: descricao
+        calcado: calcado
     };
 
     //Adiciona o novo cadastro ao final da lista de EPIs.

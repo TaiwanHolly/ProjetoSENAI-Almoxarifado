@@ -159,6 +159,16 @@ label {
     margin-bottom: 8px;
 }
 
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
 input,
 textarea {
     width: 100%;
