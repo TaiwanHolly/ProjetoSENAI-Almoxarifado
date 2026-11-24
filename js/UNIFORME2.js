@@ -3,7 +3,7 @@ async function cadastrarUniforme() {
     nome: document.getElementById("nome").value,
     ca: document.getElementById("ca").value,
     tamanho: document.getElementById("tamanho").value,
-    quantidade: document.getElementById("quantidade").value
+    quantidade: document.getElementById("quantidade").value,
   };
 
   const resposta = await fetch("http://localhost:8080/api/cadastro/uniforme", {
@@ -14,6 +14,10 @@ async function cadastrarUniforme() {
 
   if (resposta.ok) {
     alert("Uniforme cadastrado com sucesso");
+
+    document.getElementById("formCadastro").reset();
+    listarUniforme();
+
   } else {
     alert("Erro ao cadastrar");
   }
