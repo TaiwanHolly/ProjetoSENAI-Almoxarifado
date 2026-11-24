@@ -22,3 +22,8 @@ async function cadastrarUniforme() {
     alert("Erro ao cadastrar");
   }
 }
+
+function mostrarNome() {
+  document.getElementById("MostrarNome").textContent =
+    localStorage.getItem("nomeUsuario");
+}

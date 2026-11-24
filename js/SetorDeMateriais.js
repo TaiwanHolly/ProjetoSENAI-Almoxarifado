@@ -18,3 +18,8 @@ async function cadastrarMaterial() {
     alert("Erro ao cadastrar");
   }
 }
+
+function mostrarNome() {
+  document.getElementById("MostrarNome").textContent =
+    localStorage.getItem("nomeUsuario");
+}
