@@ -1,19 +1,172 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>solicitações</title>
+
+    <title>SONAX | Solicitações</title>
+
+    <link rel="stylesheet" href="css/styleSolicitacoes.css">
+    <link rel="icon" type="image/png" href="img/Sonax.png">
 </head>
 
-<style>
-    body {
-        background-color: black;
-    }
-</style>
-
 <body>
-    <a style="color: rgb(255, 255, 255); font-size: 40px; text-align: center;">W.I.P.</a>
-    <img src="img/sobre/earth.gif">
+
+    <!-- Verifica se o usuário está logado -->
+    <script>
+        if (!localStorage.getItem("meuToken")) {
+            alert("Usuário não identificado, faça login.");
+            window.location.href = "indexLogin.html";
+        }
+
+        // Encerra a sessão do usuário
+        function sair() {
+            localStorage.clear();
+            window.location.href = "indexLogin.html";
+        }
+    </script>
+
+    <main>
+
+        <!-- CABEÇALHO -->
+        <header>
+
+            <div class="logo">
+                <img src="img/Sonax.png" alt="Logo SONAX">
+                <h1>SONAX</h1>
+            </div>
+
+            <div class="nav">
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="solicitacoes.html">Solicitações</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="usuario">
+                <span id="MostrarNome">Professor</span>
+                <button onclick="sair()">Sair</button>
+            </div>
+
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section>
+
+            <div class="boas-vindas">
+                <h2>Solicitação de Materiais</h2>
+                <p>
+                    Solicite materiais dos almoxarifados
+                    para utilizar em suas aulas.
+                </p>
+            </div>
+
+            <!-- ÁREAS DE CADASTRO E LISTAGEM -->
+            <div class="conteudo">
+
+                <!-- FORMULÁRIO DE SOLICITAÇÃO -->
+                <div class="formulario">
+
+                    <h3>Nova Solicitação</h3>
+
+                    <form id="formSolicitacao">
+
+                        <label for="setor">Setor do Material</label>
+
+                        <select id="setor" name="setor" required>
+                            <option value="">Selecione o setor</option>
+                            <option value="EPI">EPIs</option>
+                            <option value="Escolar">Material Escolar</option>
+                            <option value="Uniforme">Uniformes</option>
+                        </select>
+
+                        <label for="material">Nome do Material</label>
+
+                        <input
+                            type="text"
+                            id="material"
+                            name="material"
+                            placeholder="(placeholder, options ira ser integrado na db futuramente)"
+                            required
+                        >
+
+                        <label for="quantidade">Quantidade</label>
+
+                        <input
+                            type="number"
+                            id="quantidade"
+                            name="quantidade"
+                            min="1"
+                            placeholder="Digite a quantidade"
+                            required
+                        >
+
+                        <label for="finalidade">Finalidade da Solicitação</label>
+
+                        <textarea
+                            id="finalidade"
+                            name="finalidade"
+                            placeholder="Explique para qual aula o material será utilizado / A razão de ser usado."
+                            required
+                        ></textarea>
+
+                        <button type="submit">
+                            Enviar Solicitação
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- TABELA DE SOLICITAÇÕES -->
+                <div class="lista">
+
+                    <h3>Minhas Solicitações</h3>
+
+                    <div class="tabela">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Setor</th>
+                                    <th>Material</th>
+                                    <th>Quantidade</th>
+                                    <th>Finalidade</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tabelaSolicitacoes">
+
+                                <!-- Os pedidos serão exibidos pelo JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer>
+            <p>© 2026 SONAX SENAI. Todos os direitos reservados.</p>
+        </footer>
+
+    </main>
+
+    <script src="js/solicitacoesJS.js"></script>
+
 </body>
 </html>
