@@ -13,6 +13,10 @@ function acessarUniformes() {
   window.location.href = "setoresHTML/setorUNIFORME.html";
 }
 
+function acessarSolicitações() {
+  window.location.href = "solicitações.html";
+}
+
 
 function acessarCadastro() {
   if (localStorage.getItem("TipoUsuario") != "admin") {
