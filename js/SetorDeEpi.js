@@ -166,3 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Busca os registros salvos no banco e preenche a tabela.
   listarEpis();
 });
+
+function mostrarNome() {
+  document.getElementById("MostrarNome").textContent =
+    localStorage.getItem("nomeUsuario");
+}
