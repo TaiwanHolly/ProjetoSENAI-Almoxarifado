@@ -1,4 +1,4 @@
 function mostrarNome() {
-  document.getElementById("MostrarNome").textContent =
+  document.getElementById("mostrarNome").textContent =
     localStorage.getItem("nomeUsuario");
 }
